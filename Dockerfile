@@ -1,15 +1,14 @@
-# Use an OpenJDK 19 image as the base image
+# Use Java 19 as the base image
 FROM openjdk:19-jdk-slim
 
 # Set the working directory in the container
 WORKDIR /app
 
-# Copy the .war file from your target directory
+# Copy the WAR file to the container
 COPY target/mydiary-0.0.1-SNAPSHOT.war /app/mydiary.war
 
 # Expose port 8080
 EXPOSE 8080
 
-# Run the .war file with java -jar
+# Command to run the application
 ENTRYPOINT ["java", "-jar", "/app/mydiary.war"]
-
