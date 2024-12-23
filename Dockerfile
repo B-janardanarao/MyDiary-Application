@@ -1,5 +1,5 @@
-# Use an OpenJDK image as the base image
-FROM openjdk:17-jdk-slim
+# Use an OpenJDK 19 image as the base image
+FROM openjdk:19-jdk-slim
 
 # Set the working directory in the container
 WORKDIR /app
@@ -12,7 +12,4 @@ EXPOSE 8080
 
 # Run the .war file with java -jar
 ENTRYPOINT ["java", "-jar", "/app/mydiary.war"]
-
-
-
 
